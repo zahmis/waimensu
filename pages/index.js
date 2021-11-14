@@ -1,19 +1,23 @@
 import Head from 'next/head'
+import History from './history'
 import 'tailwindcss/tailwind.css'
 
 export default function Home() {
   return (
-    <div className="relative bg-gray-400">
+    <div className="relative bg-gray-100">
       <Head>
-        <title>Wai history</title>
+        <title>Waimensu</title>
         <meta name="description" content="wai history" />
       </Head>
+
       <main>
-        <h1>
-          Wai history
-        </h1>
+        <div className="container text-center mx-auto my-auto bg-white">
+          <div className="row text-5xl mb-5">Waimensu</div>
+          <hr />
+          <History />
+        </div>
       </main>
-      <footer>
+      <footer className="text-center">
         ©️ 2021 waimensu
       </footer>
     </div>
