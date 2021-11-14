@@ -1,23 +1,19 @@
 import Head from 'next/head'
-import styles from '../styles/Home.module.css'
+import 'tailwindcss/tailwind.css'
 
 export default function Home() {
   return (
-    <div className={styles.container}>
+    <div className="relative bg-gray-400">
       <Head>
         <title>Wai history</title>
         <meta name="description" content="wai history" />
       </Head>
-
-      <main className={styles.main}>
-        <h1 className={styles.title}>
+      <main>
+        <h1>
           Wai history
         </h1>
-
-        <div className={styles.grid}>
-        </div>
       </main>
-      <footer className={styles.footer}>
+      <footer>
         ©️ 2021 waimensu
       </footer>
     </div>
