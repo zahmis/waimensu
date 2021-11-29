@@ -9,7 +9,7 @@ const onStudentAgeHandler = () =>{
   setIsShowEachAge(!isShowEachAge)
 }
 
-const onClickElementSchoolAge = () =>{
+const onClickElementAge = () =>{
     console.log("小学生")
 }
 
@@ -26,7 +26,7 @@ return(
             <button 
               className="w-full h-10 px-5 m-2 text-indigo-200 translation-colors duration-150 bg-indigo-700 round-lg focus:shadow-outline hover:bg-indigo-800" 
               type="button" 
-              onClick={onClickElementSchoolAge}>
+              onClick={onClickElementAge}>
                 小学生時代
             </button>
           </div>
