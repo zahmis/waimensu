@@ -1,10 +1,11 @@
+import StudentAge from './studentAge'
+
 const History = () => {
     return(
         <>
         <div className="row m-5">
         <div className="text-xl">
-            Sugar chain
-            TBD...
+            <StudentAge />
         </div>
         <div className="text-xl">
             Agricalture
