@@ -1,8 +1,11 @@
 import Head from 'next/head'
 import History from './history'
 import 'tailwindcss/tailwind.css'
+import { getArticles } from '../firebase/setting'
 
 export default function Home() {
+  getArticles()
+
   return (
     <div className="relative bg-gray-100">
       <Head>
