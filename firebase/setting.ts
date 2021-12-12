@@ -21,5 +21,3 @@ export const getArticles = async () => {
   console.log(articleList);
   return articleList;
 };
-
-// export const firebaseAnalytics = getAnalytics(firebase);
