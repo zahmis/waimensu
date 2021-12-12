@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState } from 'react';
 
 const StudentAge = () => {
   const [isShowEachAge, setIsShowEachAge] = useState(false);
@@ -8,16 +8,16 @@ const StudentAge = () => {
   };
 
   const onClickElementAge = () => {
-    console.log("小学生");
+    console.log('小学生');
   };
 
   const onClickJuniorHighAge = () => {
-    console.log("中学生");
+    console.log('中学生');
   };
 
   return (
     <>
-      　{" "}
+      　{' '}
       <div className="" onClick={onStudentAgeHandler}>
         学生時代
       </div>

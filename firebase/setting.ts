@@ -1,6 +1,6 @@
 // Import the functions you need from the SDKs you need
-import { initializeApp } from "firebase/app";
-import { getFirestore, collection, getDocs } from "firebase/firestore/lite";
+import { initializeApp } from 'firebase/app';
+import { getFirestore, collection, getDocs } from 'firebase/firestore/lite';
 
 const firebaseConfig = {
   apiKey: process.env.NEXT_PUBLIC_FIREBASE_API_KEY,
@@ -15,7 +15,7 @@ const firebaseConfig = {
 export const firebase = initializeApp(firebaseConfig);
 export const db = getFirestore(firebase);
 export const getArticles = async () => {
-  const articleCol = collection(db, "articles");
+  const articleCol = collection(db, 'articles');
   const articleDocs = await getDocs(articleCol);
   const articleList = articleDocs.docs.map((doc) => doc.data());
   console.log(articleList);

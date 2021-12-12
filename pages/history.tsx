@@ -1,4 +1,4 @@
-import StudentAge from "./studentAge";
+import StudentAge from './studentAge';
 
 const History = () => {
   return (
