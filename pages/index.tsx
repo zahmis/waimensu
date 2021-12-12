@@ -1,10 +1,10 @@
-import Head from 'next/head'
-import History from './history'
-import 'tailwindcss/tailwind.css'
-import { getArticles } from '../firebase/setting'
+import Head from "next/head";
+import History from "./history";
+import "tailwindcss/tailwind.css";
+import { getArticles } from "../firebase/setting";
 
 export default function Home() {
-  getArticles()
+  getArticles();
 
   return (
     <div className="relative bg-gray-100">
@@ -20,9 +20,7 @@ export default function Home() {
           <History />
         </div>
       </main>
-      <footer className="text-center">
-        ©️ 2021 waimensu
-      </footer>
+      <footer className="text-center">©️ 2021 waimensu</footer>
     </div>
-  )
+  );
 }
