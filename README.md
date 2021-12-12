@@ -1,1 +1,1 @@
-See https://waimensu.vercel.app/
+https://waimensu-delta.vercel.app/
