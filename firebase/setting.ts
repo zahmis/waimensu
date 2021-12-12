@@ -24,6 +24,8 @@ export const getArticles = async() =>{
     const articleDocs =await getDocs(articleCol)
     const articleList = articleDocs.docs.map(doc=>doc.data())
     console.log(articleList);
+    console.log("this is setting.ts");
+    
     
     return articleList
 }
