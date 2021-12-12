@@ -13,8 +13,6 @@ const firebaseConfig = {
 
   };
 
-  console.log(firebaseConfig);
-
 
 // Initialize Firebase
 export const firebase = initializeApp(firebaseConfig);
