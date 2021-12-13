@@ -30,9 +30,7 @@ export const getArticles = async () => {
 };
 
 export const addComment = async (data) => {
-  const commentRef = doc(db, 'collection/comments');
-  console.log(commentRef);
-
+  // const commentRef = doc(db, 'collection/comments');
   const commentCol = await collection(db, 'comments');
 
   // const commentDocs = await updateDoc(commentRef, 'userName', 'hoge');
