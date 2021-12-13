@@ -1,10 +1,31 @@
 import Head from 'next/head';
 import History from './history';
 import 'tailwindcss/tailwind.css';
-import { getArticles } from '../firebase/setting';
+import { useForm, SubmitHandler } from 'react-hook-form';
+
+import { getArticles, addComment } from '../firebase/setting';
+
+type Inputs = {
+  userName: string;
+  commentContent: string;
+};
 
 export default function Home() {
   getArticles();
+
+  const {
+    register,
+    handleSubmit,
+    watch,
+    formState: { errors },
+  } = useForm<Inputs>();
+
+  const onSubmit: SubmitHandler<Inputs> = async (data) => {
+    console.log(data);
+
+    await addComment(data);
+  };
+  console.log(watch('userName'));
 
   return (
     <div className="relative bg-gray-100">
@@ -19,6 +40,11 @@ export default function Home() {
           <hr />
           <History />
         </div>
+        <form className="" onSubmit={handleSubmit(onSubmit)}>
+          {/* register your input into the hook by invoking the "register" function */}
+          <input defaultValue="test" {...register('userName')} />
+          <input type="submit" />
+        </form>
       </main>
       <footer className="text-center">©️ 2021 waimensu</footer>
     </div>
