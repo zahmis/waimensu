@@ -11,8 +11,16 @@ type Inputs = {
   commentContent: string;
 };
 
+enum Tab {
+  HOME = 'Home',
+  BIO = 'Bio',
+  HAB = 'WaiHabits',
+  LOG = 'WaiLog',
+  ABI = 'WaiAbility',
+}
+
 const Home = () => {
-  getArticles();
+  // getArticles();
 
   const [tabValue, setTabValue] = useState<string | null>(null);
 
@@ -43,10 +51,10 @@ const Home = () => {
       <main>
         <div className="container text-center mx-auto my-auto">
           <div className="row text-5xl mb-5">ワイメンス</div>
-          <ul className="flex border-b">
-            <li className="-mb-px mr-1">
+          <ul className="flex">
+            <li className={`${tabValue == Tab.HOME && 'bg-blue-50'}  -mb-px mr-1 `}>
               <button
-                className="bg-white inline-block border-l border-t border-r rounded-t py-2 px-4 text-blue-700 font-semibold"
+                className="inline-block py-2 px-4 text-blue-800 font-semibold"
                 onClick={() => {
                   changeTabHandler('Home');
                 }}
@@ -54,19 +62,19 @@ const Home = () => {
                 Home
               </button>
             </li>
-            <li className="mr-1">
+            <li className={`${tabValue == Tab.BIO && 'bg-blue-50'} -mb-px mr-1 `}>
               <button
-                className="bg-white inline-block py-2 px-4 text-green-500 hover:text-blue-800 font-semibold"
+                className=" inline-block py-2 px-4 text-green-500 font-semibold"
                 onClick={() => {
-                  changeTabHandler('Biography');
+                  changeTabHandler('Bio');
                 }}
               >
                 Biography
               </button>
             </li>
-            <li className="mr-1">
+            <li className={`${tabValue == Tab.HAB && 'bg-blue-50'} -mb-px mr-1 `}>
               <button
-                className="bg-white inline-block py-2 px-4 text-yellow-700 hover:text-blue-800 font-semibold"
+                className=" inline-block py-2 px-4 text-yellow-700 font-semibold"
                 onClick={() => {
                   changeTabHandler('WaiHabits');
                 }}
@@ -74,9 +82,9 @@ const Home = () => {
                 ワイ習慣
               </button>
             </li>
-            <li className="mr-1">
+            <li className={`${tabValue == Tab.LOG && 'bg-blue-50'} -mb-px mr-1 `}>
               <button
-                className="bg-white inline-block py-2 px-4 text-red-600 font-semibold"
+                className="inline-block rounded-t py-2 px-4 text-blue-700 font-semibold"
                 onClick={() => {
                   changeTabHandler('WaiLog');
                 }}
@@ -84,9 +92,9 @@ const Home = () => {
                 ワイ log
               </button>
             </li>
-            <li className="mr-1">
+            <li className={`${tabValue == Tab.ABI && 'bg-blue-50'} -mb-px mr-1 `}>
               <button
-                className="bg-white inline-block py-2 px-4 text-purple-800 font-semibold"
+                className="inline-block py-2 px-4 text-blue-700 font-semibold"
                 onClick={() => {
                   changeTabHandler('WaiAbility');
                 }}
