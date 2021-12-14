@@ -40,10 +40,10 @@ export default function Home() {
           <hr />
           <History />
         </div>
-        {/* <form className="" onSubmit={handleSubmit(onSubmit)}> */}
-        {/* <input defaultValue="test" {...register('userName')} /> */}
-        {/* <input type="submit" /> */}
-        {/* </form> */}
+        <form className="" onSubmit={handleSubmit(onSubmit)}>
+          <input defaultValue="test" {...register('userName')} />
+          <input type="submit" />
+        </form>
       </main>
       <footer className="text-center">©️ 2021 waimensu</footer>
     </div>
