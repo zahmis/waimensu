@@ -10,7 +10,7 @@ type Inputs = {
   commentContent: string;
 };
 
-export default function Home() {
+const Home = () => {
   getArticles();
 
   const {
@@ -28,7 +28,7 @@ export default function Home() {
   console.log(watch('userName'));
 
   return (
-    <div className="relative bg-gray-100">
+    <div className="relative bg-gray-100 bg-pattern">
       <Head>
         <title>Waimensu</title>
         <meta name="description" content="wai history" />
@@ -48,4 +48,6 @@ export default function Home() {
       <footer className="text-center">©️ 2021 waimensu</footer>
     </div>
   );
-}
+};
+
+export default Home;
