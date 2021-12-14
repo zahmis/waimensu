@@ -19,6 +19,10 @@ enum Tab {
   ABI = 'WaiAbility',
 }
 
+const HomeContents = () => {
+  return <>home だよ</>;
+};
+
 const Home = () => {
   // getArticles();
 
@@ -103,7 +107,7 @@ const Home = () => {
               </button>
             </li>
           </ul>
-          {tabValue == Tab.HOME && <></>}
+          {tabValue == Tab.HOME && <HomeContents />}
           {tabValue == Tab.BIO && <History />}
           {/* {tabValue == 'Habits' && <WaiHabits />}
           {tabValue == 'log' && <WaiLog />}
