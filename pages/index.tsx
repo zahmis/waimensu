@@ -103,8 +103,8 @@ const Home = () => {
               </button>
             </li>
           </ul>
-          {tabValue == 'Home' && <></>}
-          {tabValue == 'Biography' && <History />}
+          {tabValue == Tab.HOME && <></>}
+          {tabValue == Tab.BIO && <History />}
           {/* {tabValue == 'Habits' && <WaiHabits />}
           {tabValue == 'log' && <WaiLog />}
           {tabValue == 'ability' && <WaiAbility />} */}
