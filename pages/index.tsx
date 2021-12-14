@@ -4,6 +4,7 @@ import 'tailwindcss/tailwind.css';
 import { useForm, SubmitHandler } from 'react-hook-form';
 
 import { getArticles, addComment } from '../firebase/setting';
+import { useState } from 'react';
 
 type Inputs = {
   userName: string;
@@ -12,6 +13,8 @@ type Inputs = {
 
 const Home = () => {
   getArticles();
+
+  const [tabValue, setTabValue] = useState<string | null>(null);
 
   const {
     register,
@@ -25,7 +28,10 @@ const Home = () => {
 
     await addComment(data);
   };
-  console.log(watch('userName'));
+
+  const changeTabHandler = (menu: string) => {
+    setTabValue(menu);
+  };
 
   return (
     <>
@@ -36,51 +42,64 @@ const Home = () => {
 
       <main>
         <div className="container text-center mx-auto my-auto">
-          <div className="row text-5xl mb-5">Waimensu</div>
-          <hr />
+          <div className="row text-5xl mb-5">ワイメンス</div>
           <ul className="flex border-b">
             <li className="-mb-px mr-1">
-              <a
+              <button
                 className="bg-white inline-block border-l border-t border-r rounded-t py-2 px-4 text-blue-700 font-semibold"
-                href="#"
+                onClick={() => {
+                  changeTabHandler('Home');
+                }}
               >
                 Home
-              </a>
+              </button>
             </li>
             <li className="mr-1">
-              <a
-                className="bg-white inline-block py-2 px-4 text-blue-500 hover:text-blue-800 font-semibold"
-                href="#"
+              <button
+                className="bg-white inline-block py-2 px-4 text-green-500 hover:text-blue-800 font-semibold"
+                onClick={() => {
+                  changeTabHandler('Biography');
+                }}
               >
                 Biography
-              </a>
+              </button>
             </li>
             <li className="mr-1">
-              <a
-                className="bg-white inline-block py-2 px-4 text-blue-500 hover:text-blue-800 font-semibold"
-                href="#"
+              <button
+                className="bg-white inline-block py-2 px-4 text-yellow-700 hover:text-blue-800 font-semibold"
+                onClick={() => {
+                  changeTabHandler('WaiHabits');
+                }}
               >
                 ワイ習慣
-              </a>
+              </button>
             </li>
             <li className="mr-1">
-              <a
-                className="bg-white inline-block py-2 px-4 text-gray-400 font-semibold"
-                href="#"
+              <button
+                className="bg-white inline-block py-2 px-4 text-red-600 font-semibold"
+                onClick={() => {
+                  changeTabHandler('WaiLog');
+                }}
               >
-                ワイトレ
-              </a>
+                ワイ log
+              </button>
             </li>
             <li className="mr-1">
-              <a
-                className="bg-white inline-block py-2 px-4 text-gray-400 font-semibold"
-                href="#"
+              <button
+                className="bg-white inline-block py-2 px-4 text-purple-800 font-semibold"
+                onClick={() => {
+                  changeTabHandler('WaiAbility');
+                }}
               >
                 ワイアビリティ
-              </a>
+              </button>
             </li>
           </ul>
-          <History />
+          {tabValue == 'Home' && <></>}
+          {tabValue == 'Biography' && <History />}
+          {/* {tabValue == 'Habits' && <WaiHabits />}
+          {tabValue == 'log' && <WaiLog />}
+          {tabValue == 'ability' && <WaiAbility />} */}
         </div>
         <form className="" onSubmit={handleSubmit(onSubmit)}>
           <input defaultValue="test" {...register('userName')} />
