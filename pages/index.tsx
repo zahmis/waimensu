@@ -20,7 +20,11 @@ enum Tab {
 }
 
 const HomeContents = () => {
-  return <>home だよ</>;
+  return (
+    <>
+      <div>ワイメンスとは？</div>
+    </>
+  );
 };
 
 const Home = () => {
@@ -36,8 +40,6 @@ const Home = () => {
   } = useForm<Inputs>();
 
   const onSubmit: SubmitHandler<Inputs> = async (data) => {
-    console.log(data);
-
     await addComment(data);
   };
 
@@ -113,10 +115,11 @@ const Home = () => {
           {tabValue == 'log' && <WaiLog />}
           {tabValue == 'ability' && <WaiAbility />} */}
         </div>
-        <form className="" onSubmit={handleSubmit(onSubmit)}>
+
+        {/* <form className="" onSubmit={handleSubmit(onSubmit)}>
           <input defaultValue="test" {...register('userName')} />
           <input type="submit" />
-        </form>
+        </form> */}
       </main>
       <footer className="text-center">©️ 2021 waimensu</footer>
     </>
