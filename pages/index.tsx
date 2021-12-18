@@ -122,7 +122,18 @@ const Home = () => {
           <input type="submit" />
         </form> */}
         </main>
-        <footer className="text-center bg-gray-200">©️ 2021 waimensu</footer>
+        <footer className="text-center bg-gray-50">
+          <div> ©️ 2021 waimensu</div>
+          {/* <div>
+            <a
+              href="https://twitter.com/sizmaYosimaz"
+              className="twitter-follow-button"
+              // data-lang="ja"
+              data-show-count="false"
+            ></a>
+            <script async src="https://platform.twitter.com/widgets.js"></script>
+          </div> */}
+        </footer>
       </div>
     </>
   );
