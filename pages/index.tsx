@@ -1,5 +1,7 @@
 import Head from 'next/head';
 import History from './history';
+import WaiLog from './wailog';
+import WaiHabits from './waihabits';
 import 'tailwindcss/tailwind.css';
 import { useForm, SubmitHandler } from 'react-hook-form';
 
@@ -22,7 +24,8 @@ enum Tab {
 const HomeContents = () => {
   return (
     <>
-      <div>ワイメンスとは？</div>
+      <div> Waimensu とは？</div>
+      <div>「ワイ」達が集う場所である</div>
     </>
   );
 };
@@ -112,9 +115,9 @@ const Home = () => {
             </ul>
             {tabValue == Tab.HOME && <HomeContents />}
             {tabValue == Tab.BIO && <History />}
-            {/* {tabValue == 'Habits' && <WaiHabits />}
-          {tabValue == 'log' && <WaiLog />}
-          {tabValue == 'ability' && <WaiAbility />} */}
+            {tabValue == Tab.HAB && <WaiHabits />}
+            {tabValue == Tab.LOG && <WaiLog />}
+            {/* {tabValue == 'ability' && <WaiAbility />} */}
           </div>
 
           {/* <form className="" onSubmit={handleSubmit(onSubmit)}>
