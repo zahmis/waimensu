@@ -3,9 +3,11 @@ import History from './history';
 import { useForm, SubmitHandler } from 'react-hook-form';
 
 import { getArticles, addComment } from '../firebase/setting';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
+import axios from 'axios';
 
 import { useTheme, Text } from '@nextui-org/react';
+import { Article } from './models/Article';
 
 type Inputs = {
   userName: string;
@@ -31,7 +33,19 @@ const HomeContents = () => {
 const Home = () => {
   const { theme } = useTheme();
 
+  const [article, setArticle] = useState<Article>();
+
+  const fetch = async () => {
+    // axios.defaults.headers.common['Authorization'] = 'Bearer ' + localStorage.getItem('token');
+    const data = await axios.get('http://localhost:3000/article');
+    setArticle(new Article(data.data.id, data.data.title));
+  };
+  console.log(article);
+
   // getArticles();
+  useEffect(() => {
+    fetch();
+  }, []);
 
   const [tabValue, setTabValue] = useState<string | null>(null);
 
